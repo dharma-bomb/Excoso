@@ -8,7 +8,7 @@
   populated (categories.js loads it on the same 'excoso:authed' event and
   dispatches 'excoso:categories-updated' whenever that list changes).
 */
-import { uploadImage } from "./cloudinary.js";
+
 (function () {
   var CMS = window.CMS;
   var listEl = document.getElementById('productList');
