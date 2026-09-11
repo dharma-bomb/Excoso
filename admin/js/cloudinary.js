@@ -1,6 +1,6 @@
 // admin/js/cloudinary.js
 
-export async function uploadImage(file) {
+window.uploadImage = async function(file) {
 
     const CLOUD_NAME = "zegwar3g";
     const UPLOAD_PRESET = "excoso_products";
@@ -20,5 +20,10 @@ export async function uploadImage(file) {
 
     const data = await response.json();
 
+    if (!data.secure_url) {
+        console.error(data);
+        throw new Error("Cloudinary upload failed");
+    }
+
     return data.secure_url;
-}
+};
