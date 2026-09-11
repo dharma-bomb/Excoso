@@ -2,7 +2,7 @@
 
 export async function uploadImage(file) {
 
-    const CLOUD_NAME = "YOUR_CLOUD_NAME";
+    const CLOUD_NAME = "zegwar3g";
     const UPLOAD_PRESET = "excoso_products";
 
     const formData = new FormData();
@@ -11,7 +11,7 @@ export async function uploadImage(file) {
     formData.append("upload_preset", UPLOAD_PRESET);
 
     const response = await fetch(
-        `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
+        `https://api.cloudinary.com/v1_1/${zegwar3g}/image/upload`,
         {
             method: "POST",
             body: formData
