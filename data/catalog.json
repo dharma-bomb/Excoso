@@ -1,0 +1,125 @@
+{
+  "categories": [
+    {
+      "id": "backpacks",
+      "name": "Backpacks",
+      "tagline": "Designed for everyday movement.",
+      "description": "Premium backpacks engineered for comfort, style and performance — and built to take a branding hit for your team.",
+      "eyebrow": "Premium Merchandise",
+      "shopLabel": "Shop Backpacks",
+      "image": "images/zenso-backpack.png"
+    },
+    {
+      "id": "tshirts",
+      "name": "T-Shirts",
+      "tagline": "Built for the daily grind.",
+      "description": "Soft, breathable tees ready for a logo and a long day — from the desk to the delivery run.",
+      "eyebrow": "Everyday Essentials",
+      "shopLabel": "Shop T-Shirts",
+      "image": ""
+    },
+    {
+      "id": "jackets",
+      "name": "Jackets",
+      "tagline": "Shell up. Move anyway.",
+      "description": "Wind and water resistant shells built for commutes and worksites alike.",
+      "eyebrow": "Weather-Ready",
+      "shopLabel": "Shop Jackets",
+      "image": ""
+    },
+    {
+      "id": "caps",
+      "name": "Caps",
+      "tagline": "Small detail. Big presence.",
+      "description": "Structured caps that carry your logo without shouting it.",
+      "eyebrow": "Finish The Look",
+      "shopLabel": "Shop Caps",
+      "image": ""
+    },
+    {
+      "id": "umbrellas",
+      "name": "Umbrellas",
+      "tagline": "Stay dry. Stay on time.",
+      "description": "Wind-tested umbrellas that survive the commute, not just the porch.",
+      "eyebrow": "Built For Monsoon",
+      "shopLabel": "Shop Umbrellas",
+      "image": ""
+    },
+    {
+      "id": "raincoats",
+      "name": "Raincoats",
+      "tagline": "Weather happens. Keep moving.",
+      "description": "Seam-taped raincoats built for real monsoons, not light drizzle.",
+      "eyebrow": "Monsoon Ready",
+      "shopLabel": "Shop Raincoats",
+      "image": ""
+    }
+  ],
+  "products": [
+    {
+      "id": "zenso-backpack",
+      "name": "Zenso Backpack",
+      "category": "backpacks",
+      "price": 3499,
+      "description": "Designed for everyday performance with smart organization and maximum comfort — our best-selling carry.",
+      "specs": [
+        { "label": "Capacity", "value": "28 Litres" },
+        { "label": "Weather", "value": "IPX-4 Rated" },
+        { "label": "Laptop Sleeve", "value": "Up to 16\u2033" },
+        { "label": "Compartments", "value": "3 Main + 2 EZ" }
+      ],
+      "images": ["images/zenso-backpack.png"],
+      "featured": true
+    },
+    {
+      "id": "ridge-shell-jacket",
+      "name": "Ridge Shell Jacket",
+      "category": "jackets",
+      "price": 2999,
+      "description": "Wind and water resistant shell built for commutes and worksites alike.",
+      "specs": [],
+      "images": [],
+      "featured": true
+    },
+    {
+      "id": "trail-cap",
+      "name": "Trail Cap",
+      "category": "caps",
+      "price": 699,
+      "description": "Structured 6-panel cap that carries your logo without shouting it.",
+      "specs": [],
+      "images": [],
+      "featured": true
+    },
+    {
+      "id": "everyday-tee",
+      "name": "Everyday Tee",
+      "category": "tshirts",
+      "price": 899,
+      "description": "Soft, breathable cotton-blend tee ready for a logo and a long day.",
+      "specs": [],
+      "images": [],
+      "featured": true
+    },
+    {
+      "id": "storm-umbrella",
+      "name": "Storm Umbrella",
+      "category": "umbrellas",
+      "price": 799,
+      "description": "Windproof, auto-open umbrella that survives the commute, not just the porch.",
+      "specs": [],
+      "images": [],
+      "featured": true
+    },
+    {
+      "id": "all-weather-raincoat",
+      "name": "All-Weather Raincoat",
+      "category": "raincoats",
+      "price": 1799,
+      "description": "Seam-taped, hooded, packable raincoat built for real monsoons.",
+      "specs": [],
+      "images": [],
+      "featured": true
+    }
+  ]
+}

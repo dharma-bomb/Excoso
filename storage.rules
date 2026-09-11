@@ -1,0 +1,31 @@
+// Firebase Storage Security Rules for Excoso product/category images.
+//
+// This is NOT deployed automatically — copy/paste this whole file into:
+//   Firebase Console → your project → Storage → Rules tab → Publish
+// (Requires the Blaze pay-as-you-go plan — Storage isn't available on
+// the free Spark plan for new projects. See README.md.)
+//
+// What this does:
+//   - Anyone can READ images (needed for the public site to display
+//     product/category photos).
+//   - Only a signed-in user (your admin account) can upload or delete,
+//     and only image files under 5MB, under products/ or categories/.
+
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /products/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.resource.size < 5 * 1024 * 1024
+                   && request.resource.contentType.matches('image/.*');
+    }
+    match /categories/{fileName} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.resource.size < 5 * 1024 * 1024
+                   && request.resource.contentType.matches('image/.*');
+    }
+    // Deny everything else by default.
+  }
+}
