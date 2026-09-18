@@ -50,6 +50,20 @@ try {
 // load the firebase-storage-compat.js script tag (currently just
 // admin/index.html) — on other pages `firebase.storage` won't exist, so
 // this is guarded to stay `null` there instead of throwing.
-var db = firebaseReady ? firebase.firestore() : null;
-var auth = firebaseReady ? firebase.auth() : null;
-var storage = (firebaseReady && typeof firebase.storage === 'function') ? firebase.storage() : null;
+var db = null;
+var auth = null;
+var storage = null;
+
+if (firebaseReady) {
+    if (typeof firebase.firestore === "function") {
+        db = firebase.firestore();
+    }
+
+    if (typeof firebase.auth === "function") {
+        auth = firebase.auth();
+    }
+
+    if (typeof firebase.storage === "function") {
+        storage = firebase.storage();
+    }
+}
