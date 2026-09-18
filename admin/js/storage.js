@@ -6,8 +6,8 @@ window.CMSStorage = {
 
     uploadImage: async function(file, folder, progressCallback) {
 
-        const CLOUD_NAME = "YOUR_CLOUDINARY_NAME";
-        const UPLOAD_PRESET = "YOUR_UPLOAD_PRESET";
+        const CLOUD_NAME = "zegwar3g";
+        const UPLOAD_PRESET = "excoso_products";
 
         const formData = new FormData();
 
@@ -25,6 +25,7 @@ window.CMSStorage = {
         const data = await response.json();
 
         if (!data.secure_url) {
+            console.error(data);
             throw new Error("Upload failed");
         }
 
@@ -38,5 +39,4 @@ window.CMSStorage = {
     deleteImage: async function(url) {
         return true;
     }
-
 };
