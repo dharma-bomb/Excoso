@@ -284,16 +284,25 @@ function prefillQuoteFromProduct(data) {
     });
   }
 }
-    renderNav(data.categories);
-    renderHero(data.categories);
-    renderRail(data.categories);
-    renderEdit(data.products, data.categories);
-    renderFooter(data.categories);
-    renderQuoteOptions(data.categories);
-    renderCatalogPage(data);
-    prefillQuoteFromProduct(data);
-    document.dispatchEvent(new CustomEvent('catalog:ready', { detail: data }));
-  }
+
+function renderAll(data) {
+  renderNav(data.categories);
+  renderHero(data.categories);
+  renderRail(data.categories);
+  renderEdit(data.products, data.categories);
+  renderFooter(data.categories);
+  renderQuoteOptions(data.categories);
+  renderCatalogPage(data);
+
+  // Prefill only
+  prefillQuoteFromProduct(data);
+
+  document.dispatchEvent(
+    new CustomEvent('catalog:ready', {
+      detail: data
+    })
+  );
+}
 
   function loadFromFirestore() {
     return db.collection('categories').get().then(function (catSnap) {
