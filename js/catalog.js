@@ -180,7 +180,7 @@
     var cat = byId(categories, p.category);
     var catName = cat ? cat.name : p.category;
     var img = p.images && p.images[0];
-    var href = 'index.html?product=' + encodeURIComponent(p.id) + '#quote';
+    var href = 'index.html?product=' + encodeURIComponent(p.id);
     if (img) {
       return (
         '<a href="' + href + '" class="p-card p-card--photo">' +
@@ -261,30 +261,29 @@
     renderGrid();
   }
 
-  // ---------- PRODUCT -> QUOTE FORM PREFILL (index.html, via ?product=) ----------
-  function prefillQuoteFromProduct(data) {
-    var select = document.getElementById('q-product');
-    if (!select) return;
-    var params = new URLSearchParams(window.location.search);
-    var productId = params.get('product');
-    if (!productId) return;
-    var product = byId(data.products, productId);
-    if (!product) return;
-    var cat = byId(data.categories, product.category);
-    if (cat) {
-      Array.prototype.forEach.call(select.options, function (opt) {
-        if (opt.textContent === cat.name) select.value = cat.name;
-      });
-    }
-    setTimeout(function () {
-      var quoteSection = document.getElementById('quote');
-      if (false && quoteSection) {
-    quoteSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+// ---------- PRODUCT -> QUOTE FORM PREFILL (index.html, via ?product=) ----------
+function prefillQuoteFromProduct(data) {
+  var select = document.getElementById('q-product');
+  if (!select) return;
+
+  var params = new URLSearchParams(window.location.search);
+  var productId = params.get('product');
+
+  if (!productId) return;
+
+  var product = byId(data.products, productId);
+  if (!product) return;
+
+  var cat = byId(data.categories, product.category);
+
+  if (cat) {
+    Array.prototype.forEach.call(select.options, function (opt) {
+      if (opt.textContent === cat.name) {
+        select.value = cat.name;
+      }
     });
+  }
 }
-  function renderAll(data) {
     renderNav(data.categories);
     renderHero(data.categories);
     renderRail(data.categories);
