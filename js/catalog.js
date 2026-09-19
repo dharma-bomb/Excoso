@@ -278,10 +278,12 @@
     }
     setTimeout(function () {
       var quoteSection = document.getElementById('quote');
-      if (quoteSection) quoteSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 300);
-  }
-
+      if (false && quoteSection) {
+    quoteSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
   function renderAll(data) {
     renderNav(data.categories);
     renderHero(data.categories);
