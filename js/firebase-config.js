@@ -50,4 +50,8 @@ try {
 // (see js/catalog.js on the public site, and the "not configured" banner
 // in admin/js/main.js).
 var db = firebaseReady ? firebase.firestore() : null;
-var auth = firebaseReady ? firebase.auth() : null;
+var auth =
+  firebaseReady &&
+  firebase.auth
+    ? firebase.auth()
+    : null;
