@@ -26,8 +26,8 @@
   ============================================================================
 */
 var CLOUDINARY_CONFIG = {
-  cloudName: "YOUR_CLOUD_NAME",
-  uploadPreset: "excoso_unsigned",
+  cloudName: "zegwar3g",
+  uploadPreset: "excoso_products",
   // Uploads are auto-sorted into subfolders of this root, e.g.
   // excoso/products, excoso/categories, excoso/banners.
   folderRoot: "excoso",
