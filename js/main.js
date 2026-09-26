@@ -42,6 +42,7 @@
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function show(i){
+      console.log('SHOW CALLED', i);
       idx = (i + slides.length) % slides.length;
       slides.forEach(function(s, si){
         var active = si === idx;
