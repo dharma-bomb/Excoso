@@ -75,7 +75,7 @@
   document.addEventListener('catalog:ready', initHeroCarousel);
   // Safety net: if catalog.js is missing/broken and never fires the event,
   // still start the carousel on the hardcoded fallback slides.
-  setTimeout(function(){ initHeroCarousel(); }, 1500);
+// setTimeout(function(){ initHeroCarousel(); }, 1500);
 
   // Search box — jumps to the catalog page with the query applied.
   var navSearchForm = document.querySelector('#navSearch form');
