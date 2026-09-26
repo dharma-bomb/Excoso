@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product &mdash; Excoso</title>
+<meta name="description" content="Premium everyday gear from Excoso.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav">
+  <div class="wrap site-nav__inner">
+    <a href="index.html" class="site-nav__brand">
+      <img src="images/logo.png" alt="Excoso">
+      <span class="site-nav__tagline">Built for Movement</span>
+    </a>
+    <nav class="site-nav__links" id="navLinks"></nav>
+    <div class="site-nav__right">
+      <button class="site-nav__icon-btn" id="searchToggle" aria-label="Search"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></button>
+      <a href="index.html#quote" class="site-nav__corp"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg> For Corporates</a>
+      <a href="index.html#quote" class="btn btn-solid site-nav__quote">Get a Quote</a>
+      <button class="site-nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="site-nav__search" id="navSearch">
+      <form onsubmit="return false;">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <input type="text" placeholder="Search products&hellip;">
+        <button type="button" id="searchClose"><svg class="icon" viewBox="0 0 24 24" style="width:1.2em;height:1.2em"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track"><span>BUILT FOR MOVEMENT</span><span>PREMIUM MERCHANDISE</span><span>DESIGNED TO LAST</span><span>EXCOSO.IN</span><span>BUILT FOR MOVEMENT</span><span>PREMIUM MERCHANDISE</span><span>DESIGNED TO LAST</span><span>EXCOSO.IN</span></div>
+</div>
+
+<!-- BREADCRUMB -->
+<nav class="product-crumb" id="productCrumb" aria-label="Breadcrumb" style="display:none;">
+  <div class="wrap">
+    <a href="index.html">Home</a>
+    <span class="product-crumb__sep">/</span>
+    <a href="catalog.html">Catalog</a>
+    <span class="product-crumb__sep">/</span>
+    <span id="crumbCat"></span>
+    <span class="product-crumb__sep">/</span>
+    <span id="crumbName" class="product-crumb__current"></span>
+  </div>
+</nav>
+
+<!-- LOADING STATE -->
+<section class="product-loading" id="productLoading">
+  <div class="wrap"><p class="a-loading-text">Loading product&hellip;</p></div>
+</section>
+
+<!-- NOT FOUND STATE -->
+<section class="product-notfound" id="productNotFound" style="display:none;">
+  <div class="wrap">
+    <span class="eyebrow">Hmm</span>
+    <h1>Product not<br>found.</h1>
+    <p>It may have been removed, deactivated, or the link is out of date.</p>
+    <a href="catalog.html" class="btn btn-solid">Browse the Catalog <svg class="icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</section>
+
+<!-- PRODUCT DETAIL -->
+<section class="product-detail" id="productDetail" style="display:none;">
+  <div class="wrap product-detail__inner">
+
+    <div class="product-gallery" id="productGallery">
+      <div class="product-gallery__main">
+        <img id="pdMainImage" src="" alt="">
+      </div>
+      <div class="product-gallery__thumbs" id="pdThumbs"></div>
+    </div>
+
+    <div class="product-info">
+      <a class="product-info__cat" id="pdCatLink" href="catalog.html"></a>
+      <h1 class="product-info__name" id="pdName"></h1>
+      <div class="product-info__badges" id="pdBadges"></div>
+      <div class="product-info__price" id="pdPrice"></div>
+      <p class="product-info__desc" id="pdDesc"></p>
+
+      <div class="product-info__specs" id="pdSpecs"></div>
+
+      <div class="product-info__actions">
+        <a href="#" id="pdQuoteBtn" class="btn btn-solid">Request a Quote <svg class="icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="#" id="pdWhatsapp" class="btn btn-dark" style="display:none;" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+      <p class="product-info__note">Corporate &amp; bulk orders welcome &mdash; pricing shown is indicative; request a quote for volume pricing and branding options.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="related-products" id="relatedSection" style="display:none;">
+  <div class="wrap">
+    <h2>You might also like</h2>
+    <div class="catalog__grid" id="relatedGrid"></div>
+  </div>
+</section>
+
+<div style="height:var(--sp-4)"></div>
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Need this for your whole team?</h2>
+    <a href="index.html#quote" class="btn btn-dark">Get a Quote <svg class="icon" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+</section>
+<div style="height:var(--sp-4)"></div>
+
+<footer class="site-footer" id="footer">
+  <span class="site-footer__wordmark">EXCOSO</span>
+  <div class="wrap">
+    <div class="site-footer__top">
+      <h3 class="site-footer__cta">Stay ahead of the collection.</h3>
+      <form class="site-footer__form" id="newsletterForm" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email" required aria-label="Email address" id="newsletterEmail">
+        <button class="btn btn-solid" type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="site-footer__grid">
+      <div class="site-footer__col"><p>Bags, outerwear and everyday carry, designed by the product studio at Expert Corporate Solutions.</p></div>
+      <div class="site-footer__col"><h6>Shop</h6><ul id="footerShopLinks"></ul></div>
+      <div class="site-footer__col"><h6>Excoso</h6><ul><li><a href="index.html#story">About</a></li><li><a href="index.html#quote">For Corporates</a></li></ul></div>
+      <div class="site-footer__col"><h6>Contact</h6><ul id="footerContactList"><li><a href="mailto:sales@excoso.in">sales@excoso.in</a></li><li><a href="tel:+919994699776">+91 99946 99776</a></li><li><a href="tel:+919944699907">+91 99446 99907</a></li></ul></div>
+    </div>
+    <div class="site-footer__bottom"><span>&copy; 2026 Excoso</span><span id="footerCompanyLine">A brand by Expert Corporate Solutions</span></div>
+  </div>
+</footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/product.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
